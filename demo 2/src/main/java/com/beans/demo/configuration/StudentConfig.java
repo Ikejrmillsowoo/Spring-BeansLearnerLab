@@ -11,8 +11,10 @@ import java.util.List;
 public class StudentConfig {
 
     @Bean(name = "students")
-    public List<Student> currentStudents() {
-        return new Students().findAll();
+    public Students currentStudents() {
+        Student student1 = new Student(1L, "James");
+        Student student2 = new Student(2L, "Matthew");
+        return new Students(student1, student2);
     }
 
     @Bean(name = "previousStudents")
