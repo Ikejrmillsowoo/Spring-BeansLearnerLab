@@ -18,7 +18,7 @@ public class ClassroomConfig {
         return new Classroom(instructors, students);
     }
 
-    @Bean("previousCohort")
+    @Bean(name = "previousCohort")
     public Classroom previousCohort(Instructors instructors, Students previoustudents){
         return new Classroom( instructors, previoustudents);
     }

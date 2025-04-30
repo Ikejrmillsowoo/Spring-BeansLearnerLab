@@ -18,7 +18,10 @@ public class StudentConfig {
     }
 
     @Bean(name = "previousStudents")
-    public List<Student> previousStudents() {
-        return new Students().findAll();
+    public Students previousStudents() {
+//        Student student1 = new Student(17L, "Mary");
+//        Student student2 = new Student(23L, "Ethel");
+//        return new Students(student1, student2);
+       return new Students();
     }
 }

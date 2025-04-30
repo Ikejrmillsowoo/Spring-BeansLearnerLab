@@ -4,7 +4,7 @@ import com.beans.demo.interfaces.LearnerInterface;
 import com.beans.demo.interfaces.TeacherInterface;
 
 public class Instructor extends Person  implements TeacherInterface {
-    LearnerInterface learnerInterface;
+//    LearnerInterface learnerInterface;
 
 
     public Instructor(Long id, String name) {
@@ -12,9 +12,11 @@ public class Instructor extends Person  implements TeacherInterface {
     }
 
     @Override
-    public void teach(double numberOfHours) {
+    public void teach(LearnerInterface learnerInterface, double numberOfHours) {
         learnerInterface.learn(numberOfHours);
     }
+
+
 
     @Override
     public void lecture(Iterable<? extends LearnerInterface> learners, double numberOfHours) {
@@ -23,7 +25,7 @@ public class Instructor extends Person  implements TeacherInterface {
         count++;
     }
     for (LearnerInterface learner : learners){
-        learnerInterface.learn(numberOfHours/count);
+        learner.learn(numberOfHours/count);
     }
     }
 }
